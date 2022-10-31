@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract NFTMain is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
+contract NftContract is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
 
@@ -18,7 +18,7 @@ contract NFTMain is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     // struct array for returning data
     tokenInfo[] internal tokenInfoArray;
 
-    constructor() ERC721("Erc721InfiniteToken", "ITOK") {}
+    constructor() ERC721("Blocks-eater", "BE") {}
 
     function safeMint(string memory uri) public {
         _tokenIdCounter.increment();

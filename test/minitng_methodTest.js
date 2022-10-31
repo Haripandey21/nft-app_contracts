@@ -5,7 +5,7 @@ let ERC721Contracts
 describe("deployment testing...", function () {
   beforeEach(async () => {
     [addr1, addr2, addr3] = await hre.ethers.getSigners();
-     ERC721Contracts = await ethers.getContractFactory("Nft_main");
+     ERC721Contracts = await ethers.getContractFactory("NftContract");
     deployedERC721Contracts = await ERC721Contracts.deploy();
     await deployedERC721Contracts.deployed();
   });

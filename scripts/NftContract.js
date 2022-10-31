@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
 async function main() {
-  const ERC721Contracts = await ethers.getContractFactory("Erc20_unlimited");
+  const ERC721Contracts = await ethers.getContractFactory("NftContract");
   const deployedERC721Contracts  = await ERC721Contracts.deploy();
   await deployedERC721Contracts.deployed();
   
