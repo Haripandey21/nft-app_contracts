@@ -6,7 +6,7 @@ async function main() {
   await deployedERC721Contracts.deployed();
   
   console.log(
-    "deployed Contract Address:",deployedERC721Contracts.address );
+    "deployed Contract Address of NfTContract:",deployedERC721Contracts.address );
 }
 main()
  .then(() => process.exit(0))
@@ -14,4 +14,6 @@ main()
     console.error(error);
     process.exit(1);
 });
+
+
 
