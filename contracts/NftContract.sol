@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract NftContract is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
-    Counters.Counter private _tokenIdCounter;
+    Counters.Counter internal _tokenIdCounter;
 
     struct tokenInfo {
         uint256 tokenID;
@@ -66,11 +66,13 @@ contract NftContract is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
     function getAllTokens() public view returns (tokenInfo[] memory) {
         // new array initialization
-        tokenInfo[] memory returnDataArray = new tokenInfo[](totalSupply());
-        for (uint256 i = 0; i < totalSupply(); i++) {
+        tokenInfo[] memory returnDataArray = new tokenInfo[](_tokenIdCounter.current());
+        for (uint256 i = 0; i < _tokenIdCounter.current(); i++) {
             tokenInfo memory dataStruct = tokenInfo(i + 1, tokenURI(i + 1));
             returnDataArray[i] = dataStruct;
         }
         return returnDataArray;
     }
 }
+
+

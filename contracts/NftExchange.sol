@@ -10,21 +10,13 @@ contract NftExchange {
         address _to,
         uint256 _Amount
     ) public payable {
-        address seller= ERC721(_contractAddress).ownerOf((tokenID));
-         payable(seller).transfer(_Amount);
+        address seller = ERC721(_contractAddress).ownerOf((tokenID));
+        payable(seller).transfer(_Amount);
         ERC721(_contractAddress).safeTransferFrom(
             ERC721(_contractAddress).ownerOf(tokenID),
             _to,
             tokenID
-        );      
-    }
-
-
-    function transferEther( address seller, uint _Amount) public 
-    {
-
-        payable(seller).transfer(_Amount);
-
+        );
     }
 }
 
