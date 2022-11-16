@@ -73,7 +73,4 @@ contract NftContract is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
         }
         return returnDataArray;
     }
-
-
- 
 }
